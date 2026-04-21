@@ -1,7 +1,21 @@
 # CLAUDE.md — Frontend Website Rules
 
-## Always Do First
+This workspace hosts landing pages for multiple clients, each in its own subfolder.
+**Before working on any page, read the CLAUDE.md for that client's subfolder.**
+
+## Clients
+
+| Folder | Client | Stack |
+|--------|--------|-------|
+| `aob/` | Alchemy of Breath | Tailwind CDN + Marcellus/Roboto fonts |
+| `yogahub/` | yogahub | Inline styles + Quicksand font |
+| `clinica/` | Clínica Dental Dr. José Luis Cano Rueda | Inline styles + Playfair/Inter fonts |
+
+Read the relevant subfolder's `CLAUDE.md` before creating or editing any page for that client.
+
+## Always Do First (all clients)
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- **Read the client-specific `CLAUDE.md`** in the subfolder you are working in.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
@@ -13,10 +27,11 @@
 - Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
 - `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
 - If the server is already running, do not start a second instance.
+- Pages are at subfolder URLs, e.g. `http://localhost:3000/aob/index.html`, `http://localhost:3000/clinica/clinica.html`.
 
 ## Screenshot Workflow
 - Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`.
-- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
+- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000/<client>/<page>.html`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
 - `screenshot.mjs` lives in the project root. Use it as-is.
@@ -24,32 +39,7 @@
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
-## Output Defaults
-- Single `index.html` file, all styles inline, unless user says otherwise
-- Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>`
-- Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
-- Mobile-first responsive
-
-## Brand Assets
-- Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
-- If assets exist there, use them. Do not use placeholders where real assets are available.
-- If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
-
-### Alchemy of Breath Logos
-The following logo variants are available in `brand_assets/`:
-- `Alchemy of Breath_Logo_1.png` — Full logo, grey text on transparent background (for light backgrounds)
-- `Alchemy of Breath_Logo_Gold-White-Transparent.png` — Full logo, white text on transparent background (for dark backgrounds)
-- `Alchemy of Breath_Logo2_Gold-Black-Transparent.png` — Full logo, black text on transparent background (for light backgrounds)
-- `Alchemy-of-Breath-Logo.png` — Small/compact version, grey text (for headers, favicons)
-- `AOB Mandala-Gold-Black Transparant.png` — Gold vesica piscis mandala icon only, no text (standalone icon use)
-- `Guideline 2.pdf` — Brand guidelines document
-
-**Brand colors derived from logos:**
-- Gold accent: `#C5A55A` (the vesica piscis / leaf shape)
-- Dark grey text: `#5A5A5A` (grey logo variant)
-- Near-black text: `#1A1A1A` (black logo variant)
-
-## Anti-Generic Guardrails
+## Anti-Generic Guardrails (all clients)
 - **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
 - **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
 - **Typography:** Never use the same font for headings and body. Pair a display/serif with a clean sans. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
@@ -61,7 +51,7 @@ The following logo variants are available in `brand_assets/`:
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
 ## Export to GHL
-- When the user says "ready to export" or similar, run: `pbcopy < index.html`
+- When the user says "ready to export" or similar, run: `pbcopy < <path-to-file>.html`
 - Confirm with: "Done — full HTML is on your clipboard, paste it into GHL."
 
 ## Hard Rules
