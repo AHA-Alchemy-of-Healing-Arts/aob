@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARM — The Alchemy Regulation Method | Alchemy of Breath</title>
-  <meta name="description" content="ARM, the Alchemy Regulation Method — a complete training in breath and nervous system regulation. Available online or in person at ASHA in Tuscany. Built by Anthony Abbagnano and Amy Rachelle." />
+  <title>ARM &middot; The Alchemy Regulation Method | Alchemy of Breath</title>
+  <meta name="description" content="ARM, the Alchemy Regulation Method. A complete training in breath and nervous system regulation. Available online or in person at ASHA in Tuscany. Built by Anthony Abbagnano and Amy Rachelle." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -99,13 +99,12 @@
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="#" aria-label="Alchemy of Breath home"><img src="https://assets.cdn.filesafe.space/5lz2Wm44CNDwLSZWgAPf/media/69c78cc9104e4ff7ea6eb72d.png" alt="Alchemy of Breath" class="h-7 w-auto" /></a>
     <div class="hidden md:flex items-center gap-8">
-      <a href="#curriculum" class="nav-link">Curriculum</a>
-      <a href="#methodology" class="nav-link">Methodology</a>
+      <a href="#methodology" class="nav-link">The Method</a>
       <a href="#format" class="nav-link">Format &amp; Pricing</a>
       <a href="#trainers" class="nav-link">Trainers</a>
       <a href="#faq" class="nav-link">FAQ</a>
     </div>
-    <a target="_blank" rel="noopener" href="https://go.alchemyofbreath.com/book-your-discovery-call-page" class="btn-gold" style="padding:10px 22px;font-size:11px;">Start ARM</a>
+    <button type="button" onclick="openWaitlistModal()" class="btn-gold" style="padding:10px 22px;font-size:11px;cursor:pointer;">Join the waitlist</button>
   </div>
 </nav>
 
@@ -150,8 +149,8 @@
     <h1 class="text-white mb-5 leading-tight" style="font-size:clamp(34px,5vw,64px);letter-spacing:-.02em;max-width:760px;">Build a robust nervous system.</h1>
     <p class="mb-10" style="font-size:17px;line-height:1.7;font-weight:300;color:rgba(255,255,255,.78);max-width:580px;">A complete training in breath and nervous system regulation. Available online or in person at ASHA in Tuscany.</p>
     <div class="flex flex-wrap gap-4 justify-center">
-      <a href="#breathe" class="btn-gold">Try one breath</a>
-      <a href="#curriculum" class="btn-outline">See the curriculum</a>
+      <a href="#breathe" onclick="revealOrb();" class="btn-gold">Try one breath</a>
+      <a href="#methodology" class="btn-outline">See the method</a>
     </div>
   </div>
   <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
@@ -160,8 +159,8 @@
   </div>
 </section>
 
-<!-- BREATHE — dedicated orb experience -->
-<section id="breathe" class="grain relative overflow-hidden" style="background:#141412;padding:96px 24px 112px;">
+<!-- BREATHE - dedicated orb experience -->
+<section id="breathe" class="grain relative overflow-hidden" hidden style="background:#141412;padding:96px 24px 112px;">
   <!-- Top gradient bleed from hero -->
   <div class="absolute top-0 left-0 right-0 pointer-events-none" style="height:160px;background:linear-gradient(to bottom,#141412 0%,rgba(20,20,18,.6) 35%,transparent 100%);z-index:1;"></div>
   <!-- Bottom gradient blend toward trust strip teal -->
@@ -192,7 +191,8 @@
     <h2 style="font-family:'Marcellus',Georgia,serif;font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#fff;margin-bottom:14px;">Take one breath.</h2>
     <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 56px;">Match your breath to the orb. This is one of the foundational practices you will learn in ARM. The whole training builds from this.</p>
 
-    <div style="display:flex;flex-direction:column;align-items:center;gap:24px;">
+    <!-- Orb stage: revealed when the whole #breathe section is unhidden via Try one breath CTA -->
+    <div id="orbStageWrap" style="display:flex;flex-direction:column;align-items:center;gap:24px;">
       <div id="breathStage" class="breath-stage is-hold-out" role="img" aria-label="Box breathing visualisation">
         <div class="breath-mote" style="--angle:0deg;"></div>
         <div class="breath-mote" style="--angle:60deg;"></div>
@@ -247,20 +247,14 @@
   </div>
 </section>
 
-<!-- ANTHONY OPENING QUOTE -->
-<section class="py-20" style="background:#f9f8f5;border-bottom:1px solid #d3cdb3;">
+<!-- THE WHY -->
+<section class="py-20" style="background:#fff;border-bottom:1px solid #d3cdb3;">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <div style="width:32px;height:32px;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
-      <svg width="24" height="20" viewBox="0 0 24 20" fill="none" style="opacity:.3;">
-        <path d="M0 20V12C0 8.8 0.8 6.2 2.4 4.2C4 2.13 6.27 0.8 9.2 0.2L10.4 3C8.53 3.53 7.07 4.4 6 5.6C4.93 6.8 4.33 8.2 4.2 9.8H9.6V20H0ZM13.6 20V12C13.6 8.8 14.4 6.2 16 4.2C17.6 2.13 19.87 0.8 22.8 0.2L24 3C22.13 3.53 20.67 4.4 19.6 5.6C18.53 6.8 17.93 8.2 17.8 9.8H23.2V20H13.6Z" fill="#cc9924"/>
-      </svg>
-    </div>
-    <p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(20px,2.5vw,28px);color:#1a1a18;line-height:1.5;letter-spacing:-.01em;margin-bottom:24px;">
-      I was once sitting with a high-level client who was mid-panic attack, withdrawing from medication. No technique. No protocol. Just breathing together, with simple counting. That was enough. It started with one breath.
-    </p>
-    <div class="gold-rule centered" style="margin-bottom:16px;"></div>
-    <p style="font-size:13px;color:#4a4a46;font-weight:400;">Anthony Abbagnano, Founder</p>
-    <p style="font-size:12px;color:#c5c3c2;margin-top:4px;">Alchemy of Breath</p>
+    <p class="eyebrow mb-4">The Why</p>
+    <div class="gold-rule centered"></div>
+    <p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(22px,2.6vw,32px);line-height:1.45;letter-spacing:-.01em;color:#1a1a18;font-style:italic;margin-bottom:0;">Have you ever been in a room where someone said, <em>let&rsquo;s all slow down and take a breath?</em></p>
+    <p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(20px,2.4vw,28px);line-height:1.55;letter-spacing:-.01em;color:#4a4a46;font-style:italic;margin-top:18px;">Isn&rsquo;t it curious how they are always right? It always helps.</p>
+    <p style="font-family:'Roboto',sans-serif;font-weight:400;font-size:clamp(16px,1.8vw,18px);line-height:1.6;color:#cc9924;margin-top:28px;">Now the call is for you to be that person.</p>
   </div>
 </section>
 
@@ -283,76 +277,6 @@
   </div>
 </section>
 
-<!-- THE CURRICULUM (4 PILLARS) -->
-<section id="curriculum" class="py-24" style="background:#fff;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <p class="eyebrow mb-4">The Curriculum</p>
-      <div class="section-divider mb-6"><span></span></div>
-      <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#1a1a18;max-width:600px;margin:0 auto 16px;">Four pillars.<br/>One complete foundation.</h2>
-      <p style="font-size:16px;line-height:1.7;color:#4a4a46;max-width:540px;margin:0 auto;">What you actually study, in either format. The mechanics, chemistry, cadence, and application of breath as a tool for regulation.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="pillar-card fade-up">
-        <span class="pillar-number">01</span>
-        <p class="eyebrow mb-3">Pillar One</p>
-        <h3 style="font-size:24px;color:#1a1a18;margin-bottom:12px;letter-spacing:-.01em;">Mechanics</h3>
-        <div class="gold-rule" style="margin-bottom:16px;"></div>
-        <p style="font-size:15px;color:#4a4a46;line-height:1.7;margin-bottom:16px;">How the body is designed to breathe, and what gets in the way. The structural foundations, explored hands-on.</p>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Nasal breathing function and restoration</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Diaphragm assessment and activation</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Ribcage mobility and accessory breathing</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Postural integration across positions</li>
-        </ul>
-      </div>
-
-      <div class="pillar-card fade-up">
-        <span class="pillar-number">02</span>
-        <p class="eyebrow mb-3">Pillar Two</p>
-        <h3 style="font-size:24px;color:#1a1a18;margin-bottom:12px;letter-spacing:-.01em;">Chemistry</h3>
-        <div class="gold-rule" style="margin-bottom:16px;"></div>
-        <p style="font-size:15px;color:#4a4a46;line-height:1.7;margin-bottom:16px;">Why over-breathing creates dysregulation, and why CO2 tolerance matters more than most people realise. Taught simply, with safety first.</p>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>CO2 tolerance and why it matters</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Over-breathing pattern recognition</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Anxiety physiology: the breath connection</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Gas exchange and oxygen delivery basics</li>
-        </ul>
-      </div>
-
-      <div class="pillar-card fade-up">
-        <span class="pillar-number">03</span>
-        <p class="eyebrow mb-3">Pillar Three</p>
-        <h3 style="font-size:24px;color:#1a1a18;margin-bottom:12px;letter-spacing:-.01em;">Cadence</h3>
-        <div class="gold-rule" style="margin-bottom:16px;"></div>
-        <p style="font-size:15px;color:#4a4a46;line-height:1.7;margin-bottom:16px;">The rhythm and pacing of breath that shifts how the nervous system responds. You experience each practice in your own body first.</p>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Coherence breathing and resonance</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Core techniques: box breath, 4-7-8, transformer breath</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>How breath pacing affects the autonomic nervous system</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Vagal tone and heart-rate variability</li>
-        </ul>
-      </div>
-
-      <div class="pillar-card fade-up">
-        <span class="pillar-number">04</span>
-        <p class="eyebrow mb-3">Pillar Four</p>
-        <h3 style="font-size:24px;color:#1a1a18;margin-bottom:12px;letter-spacing:-.01em;">Application</h3>
-        <div class="gold-rule" style="margin-bottom:16px;"></div>
-        <p style="font-size:15px;color:#4a4a46;line-height:1.7;margin-bottom:16px;">Where understanding becomes confidence. Through partner practice and feedback, you learn what it feels like to guide someone toward calmer breathing.</p>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>The 90-second rapid reset protocol</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>The 12-minute daily regulation practice</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Breath assessment and partner practice</li>
-          <li style="font-size:14px;color:#4a4a46;display:flex;gap:10px;align-items:center;"><span style="width:4px;height:4px;background:#cc9924;border-radius:50%;flex-shrink:0;"></span>Holding space and the basics of coaching with breath</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- METHODOLOGY: 6 STAGES (Interactive) -->
 <section id="methodology" class="py-24 relative overflow-hidden" style="background:#f9f8f5;">
   <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 10% 20%,rgba(204,153,36,.04) 0%,transparent 55%),radial-gradient(ellipse at 90% 80%,rgba(53,77,76,.04) 0%,transparent 55%);"></div>
@@ -361,7 +285,7 @@
       <p class="eyebrow mb-4">The Methodology</p>
       <div class="section-divider mb-6"><span></span></div>
       <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.15;letter-spacing:-.02em;color:#1a1a18;">Six stages of regulation</h2>
-      <p style="font-size:16px;line-height:1.75;color:#4a4a46;max-width:580px;margin:20px auto 0;">The arc you move through across the training. The curriculum above is what you study. The six stages are the developmental shape of how it lands.</p>
+      <p style="font-size:16px;line-height:1.75;color:#4a4a46;max-width:580px;margin:20px auto 0;">Imagine you are passing through six stages of regulation, gaining confidence with each one. Tap any stage to see what it builds.</p>
     </div>
 
     <div class="level-grid">
@@ -400,13 +324,13 @@
     <div class="text-center mb-16">
       <p class="eyebrow mb-4">The Science</p>
       <div class="section-divider mb-6"><span></span></div>
-      <h2 style="font-family:'Marcellus',Georgia,serif;font-size:clamp(28px,3.5vw,44px);line-height:1.15;letter-spacing:-.02em;color:#fff;max-width:720px;margin:0 auto 22px;">Measurable changes in the system that runs everything else.</h2>
+      <h2 style="font-family:'Marcellus',Georgia,serif;font-size:clamp(28px,3.5vw,44px);line-height:1.15;letter-spacing:-.02em;color:#fff;max-width:720px;margin:0 auto 22px;">The dashboard of your nervous system. And how to use it.</h2>
       <p style="font-size:17px;line-height:1.75;color:rgba(255,255,255,.6);max-width:640px;margin:0 auto;">ARM works directly with the body's autonomic nervous system. Through conscious breathwork, somatic practice, and structured regulation protocols, you build measurable improvements in:</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <div class="stat-card text-center fade-up"><p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(26px,2.6vw,32px);color:#cc9924;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Vagal tone</p><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">The body's primary brake on the stress response.</p></div>
       <div class="stat-card text-center fade-up"><p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(26px,2.6vw,32px);color:#cc9924;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">HRV</p><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">Heart rate variability. The signature of a resilient system.</p></div>
-      <div class="stat-card text-center fade-up"><p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(26px,2.6vw,32px);color:#cc9924;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Cortisol</p><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">Calmer baseline. Faster return after stress.</p></div>
+      <div class="stat-card text-center fade-up"><p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(24px,2.4vw,28px);color:#cc9924;line-height:1.15;letter-spacing:-.01em;margin-bottom:12px;">Stress hormones</p><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">Cortisol, adrenaline, noradrenaline. Calmer baseline. Faster return after stress.</p></div>
       <div class="stat-card text-center fade-up"><p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(26px,2.6vw,32px);color:#cc9924;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Flexibility</p><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">Autonomic flexibility. The capacity to shift states with intention.</p></div>
     </div>
   </div>
@@ -419,7 +343,7 @@
       <div>
         <p class="eyebrow mb-4">Who This Is For</p>
         <div class="gold-rule"></div>
-        <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#1a1a18;margin-bottom:16px;">Built for people who work with people. And anyone who wants to regulate their own system first.</h2>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#1a1a18;margin-bottom:16px;">Built for you. A system that uplifts you in challenging moments, and empowers you to teach others for their benefit, too.</h2>
         <p style="font-size:16px;line-height:1.75;color:#4a4a46;margin-bottom:28px;">No prior breathwork experience required. The training begins with your own regulation. Everything else builds from there.</p>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0;">
           <div class="for-tag"><span class="dot"></span>Yoga teachers</div>
@@ -469,7 +393,7 @@
       <p class="eyebrow mb-4">Format &amp; Pricing</p>
       <div class="section-divider mb-6"><span></span></div>
       <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.15;letter-spacing:-.02em;color:#1a1a18;max-width:620px;margin:0 auto 16px;">Choose the format that fits your life.</h2>
-      <p style="font-size:16px;line-height:1.75;color:#4a4a46;max-width:560px;margin:0 auto;">The same four pillars and six-stage methodology. Delivered online or as a residential week at ASHA in Tuscany.</p>
+      <p style="font-size:16px;line-height:1.75;color:#4a4a46;max-width:560px;margin:0 auto;">The same six-stage methodology. Delivered online or as a residential week at ASHA in Tuscany.</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
@@ -486,14 +410,14 @@
         <p class="format-price">$299</p>
         <p class="format-meta">Complete program &middot; Founding launch price</p>
         <ul class="format-includes">
-          <li>50 hours of training across the four pillars</li>
+          <li>50 hours of training across the six stages</li>
           <li>Self-paced video lessons + workbook</li>
           <li>Weekly live calls with a senior trainer</li>
           <li>Practice library and community access</li>
           <li>ARM certificate of completion</li>
           <li>Pathway into the Facilitator Training</li>
         </ul>
-        <a target="_blank" rel="noopener" href="https://go.alchemyofbreath.com/book-your-discovery-call-page" class="btn-outline-dark text-center" style="margin-top:auto;">Join the online cohort</a>
+        <button type="button" onclick="openWaitlistModal()" class="btn-gold text-center" style="margin-top:auto;cursor:pointer;">Join the waitlist</button>
       </div>
 
       <!-- In Person (featured) -->
@@ -519,13 +443,33 @@
   </div>
 </section>
 
+<!-- WAITLIST FORM -->
+<section id="waitlist" class="py-24 grain relative overflow-hidden" style="background:#354d4c;">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 30%,rgba(204,153,36,.1) 0%,transparent 55%);"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:8px 18px;background:rgba(204,153,36,.14);border:1px solid rgba(204,153,36,.45);font-family:'Roboto',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#cc9924;margin-bottom:24px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#cc9924;box-shadow:0 0 8px rgba(204,153,36,.8);"></span>
+        Founding rate &middot; Save $400 &middot; Limited spots
+      </div>
+      <h2 style="font-family:'Marcellus',Georgia,serif;font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#fff;margin-bottom:14px;">Join the ARM waitlist.</h2>
+      <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;">Be first to know when launch dates are confirmed. Founding rate locked at <strong style="color:#cc9924;">$299</strong> for everyone on the list.</p>
+    </div>
+
+    <div class="fade-up" style="background:rgba(255,255,255,.04);backdrop-filter:blur(12px);border:1px solid rgba(204,153,36,.4);box-shadow:0 24px 64px rgba(0,0,0,.35),0 0 80px -20px rgba(204,153,36,.2),inset 0 1px 0 rgba(255,255,255,.06);padding:10px;">
+      <iframe src="https://link.alchemyofbreath.com/widget/form/0Y0M6NBIBRkgWW2k3h3R" style="width:100%;height:480px;border:none;border-radius:8px;display:block;background:#fff;" id="inline-0Y0M6NBIBRkgWW2k3h3R" data-form-id="0Y0M6NBIBRkgWW2k3h3R" title="ARM Waitlist"></iframe>
+    </div>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);text-align:center;margin-top:18px;">No spam, ever. We will email you when the launch dates land.</p>
+  </div>
+</section>
+
 <!-- TRAINERS -->
 <section id="trainers" class="py-24" style="background:#f9f8f5;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-12">
       <p class="eyebrow mb-4">Your Trainers</p>
       <div class="section-divider mb-6"><span></span></div>
-      <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#1a1a18;">Led by practitioners.<br/>Grounded in experience.</h2>
+      <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.2;letter-spacing:-.02em;color:#1a1a18;">Over 100 years of breathwork experience.<br/>Combined.</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -565,18 +509,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="py-24 relative overflow-hidden" style="background:#fff;">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <p class="eyebrow mb-4">In their words</p>
-    <div class="gold-rule centered"></div>
-    <div class="big-quote" style="margin-top:40px;">
-      <p style="font-family:'Marcellus',Georgia,serif;font-size:clamp(22px,2.6vw,30px);line-height:1.5;letter-spacing:-.01em;color:#1a1a18;font-style:italic;">The training is definitely something I felt called to do. Breathwork continues to open doors. The training allows me to fully investigate and be supported in my experiences. I feel like I am growing and opening towards life's untapped potential.</p>
-    </div>
-    <p style="font-size:14px;color:#4a4a46;margin-top:32px;letter-spacing:.04em;">&mdash; Hannah Goodman, Alchemy of Breath facilitator</p>
-  </div>
-</section>
-
 <!-- GET STARTED -->
 <section class="py-24 grain relative overflow-hidden" style="background:#1a1a18;">
   <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 30%,rgba(204,153,36,.08) 0%,transparent 55%);"></div>
@@ -586,7 +518,7 @@
     <h2 style="font-family:'Marcellus',Georgia,serif;font-size:clamp(28px,3.5vw,44px);line-height:1.15;letter-spacing:-.02em;color:#fff;margin-bottom:18px;">Start where you are.</h2>
     <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,.65);max-width:540px;margin:0 auto 32px;">Submit your interest and a Success Advisor will help you choose between online and in person, and answer any questions.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a target="_blank" rel="noopener" href="https://go.alchemyofbreath.com/book-your-discovery-call-page" class="btn-gold">Submit your interest</a>
+      <button type="button" onclick="openWaitlistModal()" class="btn-gold" style="cursor:pointer;">Join the waitlist</button>
       <a href="https://go.alchemyofbreath.com/book-your-discovery-call-page" target="_blank" rel="noopener" class="btn-outline">Schedule a call</a>
     </div>
     <p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:22px;letter-spacing:.06em;">Free 45-minute call &middot; No commitment</p>
@@ -634,7 +566,7 @@
 
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">What does the 10-hour online pre-study (in-person format) involve? <span class="faq-icon">+</span></button>
-      <div class="faq-answer"><div class="faq-answer-inner">The pre-study covers foundational respiratory anatomy, basic breath physiology, and an introduction to the four pillars. It is self-paced and completed before arriving in Tuscany. Doing it beforehand means your residential time at ASHA is spent on hands-on practice rather than foundational theory.</div></div>
+      <div class="faq-answer"><div class="faq-answer-inner">The pre-study covers foundational respiratory anatomy, basic breath physiology, and an introduction to the six-stage methodology. It is self-paced and completed before arriving in Tuscany. Doing it beforehand means your residential time at ASHA is spent on hands-on practice rather than foundational theory.</div></div>
     </div>
 
     <div class="faq-item">
@@ -737,12 +669,16 @@ function runBreathPhase(){
     runBreathPhase();
   },phase.ms);
 }
-document.addEventListener('DOMContentLoaded',()=>{
-  const stage=document.getElementById('breathStage');
-  if(!stage)return;
-  const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!prefersReduced){setTimeout(()=>{startBreathing();},800);}
-});
+function revealOrb(){
+  const sec=document.getElementById('breathe');
+  if(!sec)return;
+  // Unhide the whole section
+  sec.removeAttribute('hidden');
+  // Smooth scroll into view
+  setTimeout(()=>{sec.scrollIntoView({behavior:'smooth',block:'start'});},50);
+  // Start breathing after a short beat so the user can see the section fade in
+  setTimeout(()=>{startBreathing();},500);
+}
 const fadeObserver=new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});
 },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
@@ -770,6 +706,52 @@ document.querySelectorAll('.fade-up').forEach(el=>fadeObserver.observe(el));
   document.querySelectorAll('.level-panel-prev').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var prev=btn.getAttribute('data-prev');if(prev)jumpToLevel(prev);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();}});
 })();
+</script>
+<!-- WAITLIST MODAL -->
+<div id="waitlistModal" class="waitlist-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="waitlistModalTitle">
+  <div class="waitlist-modal-overlay" onclick="closeWaitlistModal()"></div>
+  <div class="waitlist-modal-content" role="document">
+    <button type="button" class="waitlist-modal-close" onclick="closeWaitlistModal()" aria-label="Close">&times;</button>
+    <p class="eyebrow mb-3" style="color:#cc9924;text-align:center;">Founding rate &middot; Limited spots</p>
+    <h3 id="waitlistModalTitle" style="font-family:'Marcellus',Georgia,serif;font-size:clamp(24px,3vw,32px);line-height:1.2;letter-spacing:-.02em;color:#1a1a18;text-align:center;margin-bottom:8px;">Join the ARM Online waitlist</h3>
+    <p style="font-size:14px;line-height:1.65;color:#4a4a46;text-align:center;margin-bottom:20px;">Be first to know when the launch dates are confirmed. Founding rate locked at <strong>$299</strong>.</p>
+    <div style="background:#f9f8f5;border:1px solid #d3cdb3;padding:6px;">
+      <iframe src="https://link.alchemyofbreath.com/widget/form/0Y0M6NBIBRkgWW2k3h3R" style="width:100%;height:480px;border:none;border-radius:6px;display:block;background:#fff;" id="inline-0Y0M6NBIBRkgWW2k3h3R" data-form-id="0Y0M6NBIBRkgWW2k3h3R" title="ARM Waitlist"></iframe>
+    </div>
+  </div>
+</div>
+
+<style>
+  .waitlist-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .waitlist-modal[hidden]{display:none;}
+  .waitlist-modal-overlay{position:absolute;inset:0;background:rgba(20,20,18,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:waitlistFadeIn .25s ease;}
+  .waitlist-modal-content{position:relative;background:#fff;border:1px solid rgba(204,153,36,.4);box-shadow:0 24px 80px rgba(0,0,0,.4),0 0 60px -10px rgba(204,153,36,.25);max-width:560px;width:100%;padding:36px 32px 28px;max-height:calc(100vh - 48px);overflow-y:auto;animation:waitlistSlideIn .3s cubic-bezier(.2,.8,.2,1);}
+  .waitlist-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:1px solid rgba(0,0,0,.1);background:transparent;cursor:pointer;font-size:22px;line-height:1;color:#4a4a46;font-family:inherit;transition:background .2s,border-color .2s,transform .2s,color .2s;}
+  .waitlist-modal-close:hover,.waitlist-modal-close:focus-visible{background:rgba(204,153,36,.08);border-color:rgba(204,153,36,.4);color:#cc9924;transform:rotate(90deg);outline:none;}
+  @keyframes waitlistFadeIn{from{opacity:0;}to{opacity:1;}}
+  @keyframes waitlistSlideIn{from{opacity:0;transform:translateY(20px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+  body.waitlist-open{overflow:hidden;}
+  @media(max-width:640px){.waitlist-modal-content{padding:28px 22px 24px;}}
+</style>
+
+<script>
+function openWaitlistModal(){
+  const m=document.getElementById('waitlistModal');
+  if(!m)return;
+  m.removeAttribute('hidden');
+  m.setAttribute('aria-hidden','false');
+  document.body.classList.add('waitlist-open');
+  // Focus close button for keyboard users
+  setTimeout(()=>{m.querySelector('.waitlist-modal-close')?.focus();},50);
+}
+function closeWaitlistModal(){
+  const m=document.getElementById('waitlistModal');
+  if(!m)return;
+  m.setAttribute('hidden','');
+  m.setAttribute('aria-hidden','true');
+  document.body.classList.remove('waitlist-open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('waitlistModal')?.hasAttribute('hidden')){closeWaitlistModal();}});
 </script>
 <script src="https://link.alchemyofbreath.com/js/form_embed.js"></script>
 
